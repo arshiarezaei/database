@@ -1,3 +1,5 @@
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
@@ -93,6 +95,23 @@ public class Main {
                 userPhoneNumber = enteredCommand.substring(12,enteredCommand.length());
                 User user = new User(userPhoneNumber);
                 user.createUser();
+            }
+
+            else if(enteredCommand.startsWith("leave_channel")){
+                String channelID = enteredCommand.substring(14);
+                channel channelInst = new channel();
+                channelInst.leave_channel(channelID, userPhoneNumber);
+            }
+
+            else if(enteredCommand.startsWith("leave_group")){
+                String groupID = enteredCommand.substring(12);
+                Group group = new Group();
+                group.leave_group(groupID, userPhoneNumber);
+            }
+            else if(enteredCommand.startsWith("view_chat")){
+                String phoneNumber = enteredCommand.substring(10);
+                PrivateChats privateChat = new PrivateChats();
+//                privateChat.show_chat(userPhoneNumber, phoneNumber);
             }
 
 

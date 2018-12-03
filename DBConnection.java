@@ -6,10 +6,10 @@ public class DBConnection {
      Connection connection;
    public void makeConnection(){
        try {
-           Class.forName("com.mysql.jdbc.Driver");
+           Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(
                    "jdbc:mysql://localhost:3306/phase2?autoReconnect=true&useSSL=false",
-                   "root","1135971374");
+                   "root","duaeb1908");
 
        }catch (Exception e){
            System.out.println(e);
