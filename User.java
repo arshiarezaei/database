@@ -71,6 +71,7 @@ public class User {
             preparedStatement.setString(1,password);
             preparedStatement.setString(2,phoneNumber);
             preparedStatement.executeUpdate();
+            connection.connection.close();
 
         }catch (Exception e){
 
@@ -84,6 +85,7 @@ public class User {
             preparedStatement.setString(1,name);
             preparedStatement.setString(2,phoneNumber);
             preparedStatement.executeUpdate();
+            connection.connection.close();
         }catch (Exception e){
             System.out.println(e);
         }

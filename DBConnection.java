@@ -15,6 +15,7 @@ public class DBConnection {
            System.out.println(e);
        }
    }
+
    public void insertRecord(String insertCommand){
       makeConnection();
       try {

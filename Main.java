@@ -71,7 +71,7 @@ public class Main {
 
             }
             else if(enteredCommand.startsWith("block_user") && loggedIn==true){
-                String blockedNumber = enteredCommand.substring(11,enteredCommand.length());
+                String blockedNumber = enteredCommand.substring(13,enteredCommand.length());
                 BlockedUser blockedUser = new BlockedUser();
                 if (!userPhoneNumber.equals(blockedNumber)){
                     blockedUser.addBlockedUser(blockedNumber,userPhoneNumber);
@@ -99,17 +99,46 @@ public class Main {
                 User setName = new User(userPhoneNumber);
                 setName.setName(name);
             }
-            else if(enteredCommand.startsWith("send_message")){
+            else if(enteredCommand.startsWith("send_message")&&loggedIn==true&&enteredCommand.length()==11){
                 String receiver = enteredCommand.substring(13,24);
                 String messageText = enteredCommand.substring(25,enteredCommand.length());
                 System.out.println(receiver);
                 System.out.println(messageText);
+                PrivateChats message = new PrivateChats();
+                message.sendMessage(userPhoneNumber,receiver,messageText);
 
             }
-            else if(enteredCommand.startsWith("create_channel")){
+            else if(enteredCommand.startsWith("create_channel")&&loggedIn==true){
+                String channelID = enteredCommand.substring(15,enteredCommand.lastIndexOf(" "));
+                String channelName = enteredCommand.substring(enteredCommand.lastIndexOf(" ")+1 , enteredCommand.length());
+                System.out.println(channelID);
+                System.out.println(channelName);
+                Channel newChannel = new Channel();
+                newChannel.createChannel(channelID,channelName,userPhoneNumber);
 
             }
+            else if(enteredCommand.startsWith("send_message_channel")&&loggedIn==true){
+                String ID = Character.toString(enteredCommand.charAt(21));
+                String messageText = enteredCommand.substring(23,enteredCommand.length());
+                //System.out.println(enteredCommand.indexOf(" "));
+                Channel newChannel = new Channel();
+                boolean isAdmin =  newChannel.isAdmin(userPhoneNumber,ID);
+                if (isAdmin){
+                    //System.out.println("if ");
+                    ChannelMessage cm = new ChannelMessage();
+                    cm.sendMessage(ID,messageText);
 
+                }
+
+            }
+            else if (enteredCommand.startsWith("create_group")&&loggedIn==true){
+                String arg = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                System.out.println(arg);
+                String groupID = enteredCommand.substring(0,arg.indexOf(" "));
+                String groupName =enteredCommand.substring(" ",arg.length());
+                Groupes newGrou
+
+            }
 
         }
 
