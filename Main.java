@@ -134,9 +134,51 @@ public class Main {
             else if (enteredCommand.startsWith("create_group")&&loggedIn==true){
                 String arg = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
                 System.out.println(arg);
-                String groupID = enteredCommand.substring(0,arg.indexOf(" "));
-                String groupName =enteredCommand.substring(" ",arg.length());
-                Groupes newGrou
+                String groupID = arg.substring(0,arg.indexOf(" "));
+                String groupName =arg.substring(arg.indexOf(" ")+1,arg.length());
+                System.out.println(groupID);
+                System.out.println(groupName);
+                Groupes newGroupes =new Groupes();
+                newGroupes.createGroup(groupID,groupName,userPhoneNumber);
+
+
+            }
+            else if (enteredCommand.startsWith("send_message_group <ID> <message>")){
+
+            }
+            else if(enteredCommand.startsWith("set_channel_link ")&&loggedIn==true){
+                String arg = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+              //  System.out.println(arg);
+                String channelID = arg.substring(0,arg.indexOf(" "));
+               // System.out.println(channelID);
+                String link = arg.substring(arg.indexOf(" ")+1,arg.length());
+                //System.out.println(link);
+                Channel updateLink = new Channel();
+                if(updateLink.isAdmin(userPhoneNumber,channelID)) {
+                    updateLink.setChannelLink(channelID, link);
+                }
+            }
+            else if (enteredCommand.startsWith("join_channel ")&&loggedIn==true){
+                String id = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                //System.out.println(id);
+                ChannelMembers newMember = new ChannelMembers();
+                newMember.addMember(userPhoneNumber,id);
+            }
+            else if(enteredCommand.startsWith("join_link")){
+
+            }
+            else if (enteredCommand.startsWith("leave_channel ")){
+                String id =  enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                ChannelMembers removeMember = new ChannelMembers();
+                removeMember.removeMember(userPhoneNumber,id);
+
+            }
+            else if(enteredCommand.startsWith("leave_group ")){
+                String id =  enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+               GroupMember  removeMember = new GroupMember();
+                removeMember.removeMember(id,userPhoneNumber);
+            }
+            else if(enteredCommand.startsWith("home")){
 
             }
 

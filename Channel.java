@@ -48,6 +48,17 @@ public class Channel {
        // System.out.println("return false");
      return false;
     }
+    public void setChannelLink(String id,String link){
+        dbConnection.makeConnection();
+        try {
+            PreparedStatement ps =dbConnection.connection.prepareStatement("UPDATE channels SET chanel_link=(?) WHERE channel_id=(?) ");
+            ps.setString(1,link);
+            ps.setString(2,id);
+            ps.executeUpdate();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 
 
 }
