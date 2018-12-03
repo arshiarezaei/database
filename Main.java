@@ -94,7 +94,21 @@ public class Main {
                 User user = new User(userPhoneNumber);
                 user.createUser();
             }
+            else if(enteredCommand.startsWith("set_name")&&loggedIn==true){
+                String name = enteredCommand.substring(9,enteredCommand.length());
+                User setName = new User(userPhoneNumber);
+                setName.setName(name);
+            }
+            else if(enteredCommand.startsWith("send_message")){
+                String receiver = enteredCommand.substring(13,24);
+                String messageText = enteredCommand.substring(25,enteredCommand.length());
+                System.out.println(receiver);
+                System.out.println(messageText);
 
+            }
+            else if(enteredCommand.startsWith("create_channel")){
+
+            }
 
 
         }

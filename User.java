@@ -18,16 +18,14 @@ public class User {
         try {
             ResultSet resultSet = connection.connection.createStatement().executeQuery(checkUser);
             while (resultSet.next()) {
-                System.out.println("while loop");
-                System.out.println(resultSet.getString("phone_number") + "\t" + resultSet.getString("password"));
+                //System.out.println("while loop");
+               // System.out.println(resultSet.getString("phone_number") + "\t" + resultSet.getString("password"));
                 password = resultSet.getString("password");
             }
         }catch (Exception e){
 
         }
-            if ( password!=null){
-                System.out.println(password);
-            }
+
         return password;
     }
     public boolean existsUser(){
@@ -77,6 +75,19 @@ public class User {
         }catch (Exception e){
 
         }
+    }
+    public void setName(String name){
+        try {
+            connection.makeConnection();
+            PreparedStatement preparedStatement = connection.connection.prepareStatement(
+                    "UPDATE user SET name=(?) WHERE phone_number=(?)");
+            preparedStatement.setString(1,name);
+            preparedStatement.setString(2,phoneNumber);
+            preparedStatement.executeUpdate();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
 }
