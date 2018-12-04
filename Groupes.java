@@ -1,4 +1,5 @@
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Groupes {
     DBConnection dbConnection = new DBConnection();
@@ -15,5 +16,19 @@ public class Groupes {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+    public ResultSet viewGroupProfile(String groupID){
+        ResultSet resultSet=null;
+        dbConnection.makeConnection();
+        try {
+            PreparedStatement groupProfile = dbConnection.connection.prepareStatement(
+                    "SELECT group_id,name,link FROM groupes WHERE group_id=(?) ");
+            groupProfile.setString(1,groupID);
+            resultSet = groupProfile.executeQuery();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return resultSet;
     }
 }

@@ -1,4 +1,6 @@
+import javax.print.DocFlavor;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
 public class PrivateChats {
@@ -19,5 +21,39 @@ public class PrivateChats {
             System.out.println(e);
 
         }
+    }
+    public ResultSet fetchMessages(String phoneNumber){
+        dbConnection.makeConnection();
+        ResultSet resultSet=null;
+        try {
+            PreparedStatement ps = dbConnection.connection.prepareStatement("SELECT sender,receiver,text FROM private_chats" +
+                    " WHERE sender= (?) OR receiver=(?) LIMIT 20");
+            ps.setString(1,phoneNumber);
+            ps.setString(2,phoneNumber);
+            resultSet=ps.executeQuery();
+//            while (resultSet.next()){
+//                System.out.println(resultSet.getString("sender")+"\t"+resultSet.getString("receiver")+
+//                resultSet.getString("text"));
+//            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return resultSet;
+    }
+    public int countUnreadMessages(String phoneNumber){
+        int count = -1;
+        dbConnection.makeConnection();
+        try {
+            PreparedStatement findCountOfUnreadMessages = dbConnection.connection.prepareStatement("SELECT COUNT(*) AS count FROM private_chats " +
+                    "WHERE receiver=(?) and state=0");
+            findCountOfUnreadMessages.setString(1,phoneNumber);
+            ResultSet resultSet = findCountOfUnreadMessages.executeQuery();
+            resultSet.next();
+            count = resultSet.getInt("count");
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return count;
     }
 }

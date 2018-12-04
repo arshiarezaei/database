@@ -1,6 +1,7 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.PropertyResourceBundle;
 
 
 public class Channel {
@@ -55,10 +56,27 @@ public class Channel {
             ps.setString(1,link);
             ps.setString(2,id);
             ps.executeUpdate();
+            dbConnection.connection.close();
         }catch (Exception e){
             System.out.println(e);
         }
     }
+    public ResultSet viewChannelProfile(String channelID){
+        ResultSet channelProfile=null;
+        dbConnection.makeConnection();
+        try {
+            PreparedStatement preparedStatement = dbConnection.connection.prepareStatement("SELECT name,chanel_link,channel_id,admin_phone_number FROM channels" +
+                    "    WHERE  channel_id=(?)");
+            preparedStatement.setString(1,channelID);
+            channelProfile = preparedStatement.executeQuery();
+
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return channelProfile;
+    }
+
 
 
 }

@@ -1,4 +1,5 @@
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ChannelMessage {
     DBConnection dbConnection =new DBConnection();
@@ -10,12 +11,24 @@ public class ChannelMessage {
             ps.setString(1,channelID);
             ps.setString(2,text);
             ps.executeUpdate();
-
             dbConnection.connection.close();
         }catch (Exception e){
             System.out.println(e);
 
         }
+    }
+    public ResultSet fetchMessages(String channelID){
+        dbConnection.makeConnection();
+        ResultSet resultSet=null;
+        try {
+            PreparedStatement ps= dbConnection.connection.prepareStatement("SELECT text  FROM channel_messages WHERE channel_id = (?)  ORDER BY date LIMIT 20 ");
+            ps.setString(1,channelID);
+            resultSet=ps.executeQuery();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return resultSet;
     }
 
 }

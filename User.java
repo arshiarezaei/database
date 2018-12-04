@@ -92,5 +92,20 @@ public class User {
 
     }
 
+    public ResultSet viewProfile(){
+        ResultSet profile = null;
+        try {
+            connection.makeConnection();
+            PreparedStatement query = connection.connection.prepareStatement("SELECT name,user_id,link FROM user" +
+                    " WHERE phone_number=(?) ");
+            query.setString(1,this.phoneNumber);
+            profile = query.executeQuery();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return profile;
+    }
+
+
 }
 

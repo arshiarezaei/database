@@ -1,8 +1,12 @@
+import javafx.scene.Group;
+
+import java.sql.ResultSet;
 import java.util.Scanner;
 
-public class Main {
-    static boolean loggedIn = false;
-    static String userPhoneNumber ;
+
+public class Main  {
+    private static boolean loggedIn = false;
+    private static String userPhoneNumber ;
 
     public static void main(String[] args) throws Exception{
 
@@ -16,7 +20,7 @@ public class Main {
                // System.out.println(loggedIn);
                 User loginRequest = new User(requestPhoneNumber);
                 boolean resultOfLoginRequest=loginRequest.existsUser();
-                if(resultOfLoginRequest==true){
+                if(resultOfLoginRequest){
                    String password = loginRequest.password();
                    if (password != null){
                        String enterredPassword;
@@ -37,12 +41,12 @@ public class Main {
                     }
                 //System.out.println(loggedIn);
             }
-            else if (enteredCommand.startsWith("logout") && loggedIn == true){
+            else if (enteredCommand.startsWith("logout") && loggedIn){
                 loggedIn = false;
                 userPhoneNumber="";
 
             }
-            else if(enteredCommand.startsWith("set_bio") && loggedIn ==true){
+            else if(enteredCommand.startsWith("set_bio") && loggedIn ){
                 user_settings bio = new user_settings(userPhoneNumber,enteredCommand.substring(8,enteredCommand.length()));
                 //System.out.println(userPhoneNumber);
                 //System.out.println(enteredCommand.substring(8,enteredCommand.length()));
@@ -50,7 +54,7 @@ public class Main {
 
 
             }
-            else if (enteredCommand.startsWith("set_self_destruct")&&loggedIn==true){
+            else if (enteredCommand.startsWith("set_self_destruct")&&loggedIn){
                  char valueOFSelfDestruct = enteredCommand.charAt(18);
                  int s= Character.getNumericValue(valueOFSelfDestruct);
                  //System.out.println(s);
@@ -63,14 +67,14 @@ public class Main {
                 }
 
             }
-            else if (enteredCommand.startsWith("set_password") && loggedIn==true){
+            else if (enteredCommand.startsWith("set_password") && loggedIn){
                 String pass = enteredCommand.substring(11,enteredCommand.length());
                 //System.out.println(pass);
                 User setPassword = new User(userPhoneNumber);
                 setPassword.setPassword(pass);
 
             }
-            else if(enteredCommand.startsWith("block_user") && loggedIn==true){
+            else if(enteredCommand.startsWith("block_user") && loggedIn){
                 String blockedNumber = enteredCommand.substring(13,enteredCommand.length());
                 BlockedUser blockedUser = new BlockedUser();
                 if (!userPhoneNumber.equals(blockedNumber)){
@@ -94,12 +98,12 @@ public class Main {
                 User user = new User(userPhoneNumber);
                 user.createUser();
             }
-            else if(enteredCommand.startsWith("set_name")&&loggedIn==true){
+            else if(enteredCommand.startsWith("set_name")&&loggedIn){
                 String name = enteredCommand.substring(9,enteredCommand.length());
                 User setName = new User(userPhoneNumber);
                 setName.setName(name);
             }
-            else if(enteredCommand.startsWith("send_message")&&loggedIn==true&&enteredCommand.length()==11){
+            else if(enteredCommand.startsWith("send_message ") && loggedIn && enteredCommand.length()==11){
                 String receiver = enteredCommand.substring(13,24);
                 String messageText = enteredCommand.substring(25,enteredCommand.length());
                 System.out.println(receiver);
@@ -108,7 +112,7 @@ public class Main {
                 message.sendMessage(userPhoneNumber,receiver,messageText);
 
             }
-            else if(enteredCommand.startsWith("create_channel")&&loggedIn==true){
+            else if(enteredCommand.startsWith("create_channel")&&loggedIn){
                 String channelID = enteredCommand.substring(15,enteredCommand.lastIndexOf(" "));
                 String channelName = enteredCommand.substring(enteredCommand.lastIndexOf(" ")+1 , enteredCommand.length());
                 System.out.println(channelID);
@@ -117,7 +121,7 @@ public class Main {
                 newChannel.createChannel(channelID,channelName,userPhoneNumber);
 
             }
-            else if(enteredCommand.startsWith("send_message_channel")&&loggedIn==true){
+            else if(enteredCommand.startsWith("send_message_channel")&&loggedIn){
                 String ID = Character.toString(enteredCommand.charAt(21));
                 String messageText = enteredCommand.substring(23,enteredCommand.length());
                 //System.out.println(enteredCommand.indexOf(" "));
@@ -131,7 +135,7 @@ public class Main {
                 }
 
             }
-            else if (enteredCommand.startsWith("create_group")&&loggedIn==true){
+            else if (enteredCommand.startsWith("create_group")&&loggedIn){
                 String arg = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
                 System.out.println(arg);
                 String groupID = arg.substring(0,arg.indexOf(" "));
@@ -146,7 +150,7 @@ public class Main {
             else if (enteredCommand.startsWith("send_message_group <ID> <message>")){
 
             }
-            else if(enteredCommand.startsWith("set_channel_link ")&&loggedIn==true){
+            else if(enteredCommand.startsWith("set_channel_link ")&&loggedIn){
                 String arg = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
               //  System.out.println(arg);
                 String channelID = arg.substring(0,arg.indexOf(" "));
@@ -158,7 +162,7 @@ public class Main {
                     updateLink.setChannelLink(channelID, link);
                 }
             }
-            else if (enteredCommand.startsWith("join_channel ")&&loggedIn==true){
+            else if (enteredCommand.startsWith("join_channel ")&&loggedIn){
                 String id = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
                 //System.out.println(id);
                 ChannelMembers newMember = new ChannelMembers();
@@ -181,9 +185,81 @@ public class Main {
             else if(enteredCommand.startsWith("home")){
 
             }
+            else if(enteredCommand.startsWith("view_chat ")&&loggedIn){
+                String phoneNumber = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                PrivateChats messages = new PrivateChats();
+                ResultSet resultSet = messages.fetchMessages(phoneNumber);
+                while (resultSet!=null && resultSet.next()){
+                    System.out.println(resultSet.getString("sender")+"\t"+resultSet.getString("receiver")+
+                            "\t" +resultSet.getString("text"));
+                }
+                messages.dbConnection.connection.close();
 
+            }
+            else if(enteredCommand.startsWith("view_channel ")&&loggedIn){
+                String channelID = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                ChannelMessage  last20messages = new ChannelMessage();
+                ResultSet resultSet = last20messages.fetchMessages(channelID);
+                while (resultSet!=null && resultSet.next()){
+                    System.out.println(resultSet.getString("text"));
+                }
+                last20messages.dbConnection.connection.close();
+
+            }
+            else if(enteredCommand.startsWith("view_user_profile ")){
+                String phoneNumber = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                //System.out.println(phoneNumber);
+                User profile = new User(phoneNumber);
+                ResultSet profileDetails = profile.viewProfile();
+                while (profileDetails!=null&&profileDetails.next()){
+                    System.out.println(profileDetails.getString("name")+"\t"+profileDetails.getString("user_id")+"" +
+                            "\t"+profileDetails.getString("link"));
+                }
+                profile.connection.connection.close();
+            }
+            else if(enteredCommand.startsWith("view_channel_profile ")) {
+                String channelID = enteredCommand.substring(enteredCommand.indexOf(" ") + 1, enteredCommand.length());
+                Channel channelProfile = new Channel();
+                ResultSet profile = channelProfile.viewChannelProfile(channelID);
+
+                while (profile != null && profile.next()) {
+                    System.out.println(profile.getString("channel_id") + "\t" + profile.getString("name") +
+                            "\t" + profile.getString("chanel_link"));
+                }
+                profile.absolute(1);
+                //System.out.println(profile.getString("admin_phone_number"));
+
+                if (profile.getString("admin_phone_number").equals(userPhoneNumber)) {
+                    ChannelMembers membersList = new ChannelMembers();
+                    ResultSet members = membersList.viewMembers(channelID);
+                    while (members != null && members.next()) {
+                        System.out.println(members.getString("member_id"));
+                    }
+                    channelProfile.dbConnection.connection.close();
+                    membersList.dbConnection.connection.close();
+                }
+            }
+            else if(enteredCommand.startsWith("view_group_profile ")){
+
+                    String groupID = enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                    Groupes membersList = new Groupes();
+                    ResultSet resultSet = membersList.viewGroupProfile(groupID);
+                    while (resultSet!=null && resultSet.next()){
+                        System.out.println(resultSet.getString("group_id")+"\t"+resultSet.getString("name")
+                        +"\t"+ resultSet.getString("link"));
+                    }
+                    membersList.dbConnection.connection.close();
+            }
+            else if(enteredCommand.startsWith("count_unread") && loggedIn){
+                PrivateChats findUnreadMessages=new PrivateChats();
+                int count = findUnreadMessages.countUnreadMessages(userPhoneNumber);
+                if(count!=-1){
+                    System.out.println(count);
+                }
+                else {
+                    System.out.println("no unread message");
+                }
+            }
         }
-
     }
-
 }
