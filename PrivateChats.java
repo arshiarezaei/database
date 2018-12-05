@@ -1,6 +1,7 @@
 import javax.print.DocFlavor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
 
 
 public class PrivateChats {
@@ -9,11 +10,12 @@ public class PrivateChats {
     public void sendMessage(String sender, String receiver, String text) {
         dbConnection.makeConnection();
         try {
-            PreparedStatement preparedStatement = dbConnection.connection.prepareStatement(" INSERT  INTO private_chats (sender,receiver,text,state)" +
-                    "VALUES ((?),(?),(?),0)");
+            PreparedStatement preparedStatement = dbConnection.connection.prepareStatement(" INSERT  INTO private_chats (sender,receiver,text,state,date)" +
+                    "VALUES ((?),(?),(?),0,?)");
             preparedStatement.setString(1,sender);
             preparedStatement.setString(2,receiver);
             preparedStatement.setString(3,text);
+            preparedStatement.setString(4,LocalDateTime.now().toString());
             preparedStatement.executeUpdate();
             dbConnection.connection.close();
 

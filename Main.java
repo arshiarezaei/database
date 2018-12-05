@@ -14,7 +14,7 @@ public class Main  {
             System.out.println("enter a command");
             Scanner input = new Scanner(System.in);
             String enteredCommand = input.nextLine();
-            System.out.println("next line"+enteredCommand);
+            //System.out.println("next line"+enteredCommand);
             if(enteredCommand.startsWith("login")) {
                 String requestPhoneNumber=enteredCommand.substring(6,enteredCommand.length());
                // System.out.println(loggedIn);
