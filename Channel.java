@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -76,7 +77,26 @@ public class Channel {
         }
         return channelProfile;
     }
+    public String findChannelByLink(String link){
+        dbConnection.makeConnection();
+        String channelID = null ;
+        ResultSet channelWithSameLink=null;
+        try {
+            PreparedStatement ps =  dbConnection.connection.prepareStatement(
+                    "SELECT channel_id FROM channels WHERE chanel_link=(?)");
+            ps.setString(1,link);
+            channelWithSameLink= ps.executeQuery();
+            while (channelWithSameLink.next()){
+                channelID = channelWithSameLink.getString("channel_id");
+            }
+            dbConnection.connection.close();
 
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return channelID;
+
+    }
 
 
 }

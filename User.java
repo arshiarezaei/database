@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.time.LocalDateTime;
 
 public class User {
    String phoneNumber;
@@ -104,6 +105,19 @@ public class User {
             System.out.println(e);
         }
         return profile;
+    }
+    public void updateLastLogin(String phoneNumber){
+        connection.makeConnection();
+        try {
+            PreparedStatement updateLastLogin = connection.connection.prepareStatement(
+                    "UPDATE user SET last_login=(?)WHERE user_id =(?)");
+            updateLastLogin.setString(1,LocalDateTime.now().toString());
+            updateLastLogin.setString(2,phoneNumber);
+            updateLastLogin.executeUpdate();
+            connection.connection.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 

@@ -1,16 +1,18 @@
 import java.rmi.server.ExportException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
 
 public class ChannelMembers {
     DBConnection dbConnection = new DBConnection();
     public void addMember(String phoneNumber , String channelID){
         dbConnection.makeConnection();
         try {
-            PreparedStatement ps = dbConnection.connection.prepareStatement("INSERT INTO channel_members(channel_id,member_id) " +
-                    "VALUES (?,?)");
+            PreparedStatement ps = dbConnection.connection.prepareStatement("INSERT INTO channel_members(channel_id,member_id,last_seen) " +
+                    "VALUES (?,?,?)");
             ps.setString(1,channelID);
             ps.setString(2,phoneNumber);
+            ps.setString(3,LocalDateTime.now().toString());
             ps.executeUpdate();
             dbConnection.connection.close();
         }catch (Exception e){
@@ -35,7 +37,7 @@ public class ChannelMembers {
         dbConnection.makeConnection();
         try {
             PreparedStatement preparedStatement = dbConnection.connection.prepareStatement(
-                    "SELECT member_id FROM channel_members where channel_id=(?)");
+                    "SELECT member_id FROM channel_members,user where channel_id=(?) AND user_id=member_id ORDER BY last_login");
             preparedStatement.setString(1,channelID);
             resultSet = preparedStatement.executeQuery();
 

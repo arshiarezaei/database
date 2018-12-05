@@ -15,10 +15,11 @@ public class user_settings {
     }
 
     public void setBio(){
-        String sql = " INSERT INTO user_settings (phone_number,bio) values('"+ phoneNumber +"','" + bio + "')";
         newConnection.makeConnection();
-        try {
-            newConnection.connection.createStatement().executeUpdate(sql);
+        try {PreparedStatement setBioStmt = newConnection.connection.prepareStatement(" UPDATE user_settings SET bio=(?) where phone_number=(?)");
+            setBioStmt.setString(2,phoneNumber);
+            setBioStmt.setString(1,bio);
+            setBioStmt.executeUpdate();
             newConnection.connection.close();
         }catch (Exception e){
             System.out.println(e);
