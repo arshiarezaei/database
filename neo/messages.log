@@ -1,0 +1,672 @@
+2019-01-20 12:53:34.504+0000 INFO  [org.neo4j]: You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7 or OpenJDK(TM) 7.
+2019-01-20 12:53:34.615+0000 INFO  [org.neo4j]: No locking implementation specified, defaulting to 'community'
+2019-01-20 12:53:34.720+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics START ---
+2019-01-20 12:53:34.742+0000 INFO  [org.neo4j]: Neo4j Kernel properties:
+    store_dir=/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo
+    ephemeral=false
+2019-01-20 12:53:34.746+0000 INFO  [org.neo4j]: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    NETWORK
+2019-01-20 12:53:34.747+0000 INFO  [org.neo4j]: System memory information:
+    Total Physical memory: 8.00 GB
+    Free Physical memory: 228.73 MB
+    Committed virtual memory: 7.68 GB
+    Total swap space: 1.00 GB
+    Free swap space: 475.75 MB
+2019-01-20 12:53:34.754+0000 INFO  [org.neo4j]: JVM memory information:
+    Free  memory: 98.86 MB
+    Total memory: 128.00 MB
+    Max   memory: 2.00 GB
+    Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space]
+    Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+    Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.05 MB, max=5.56 MB, threshold=0.00 B
+    Memory Pool: Metaspace (Non-heap memory): committed=12.13 MB, used=11.64 MB, max=-1.00 B, threshold=0.00 B
+    Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=2.44 MB, used=1.70 MB, max=117.22 MB, threshold=0.00 B
+    Memory Pool: Compressed Class Space (Non-heap memory): committed=1.38 MB, used=1.20 MB, max=1.00 GB, threshold=0.00 B
+    Memory Pool: G1 Eden Space (Heap memory): committed=15.00 MB, used=1.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: G1 Old Gen (Heap memory): committed=110.00 MB, used=25.57 MB, max=2.00 GB, threshold=0.00 B
+    Memory Pool: G1 Survivor Space (Heap memory): committed=3.00 MB, used=3.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=290.75 kB, max=117.22 MB, threshold=0.00 B
+2019-01-20 12:53:34.794+0000 INFO  [org.neo4j]: Operating system information:
+    Operating System: Mac OS X; version: 10.14.2; arch: x86_64; cpus: 4
+    Max number of file descriptors: 10240
+    Number of open file descriptors: 29
+    Process id: 1039@arshiyas-MacBook-Pro.local
+    Byte order: LITTLE_ENDIAN
+    Local timezone: Asia/Tehran
+2019-01-20 12:53:34.964+0000 INFO  [org.neo4j]: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: "Oracle Corporation"
+    VM Version: 10+46
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=61544:/Applications/IntelliJ IDEA.app/Contents/bin, -Dfile.encoding=UTF-8]
+2019-01-20 12:53:34.966+0000 INFO  [org.neo4j]: Java classpath:
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-csv/2.2.1/neo4j-csv-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+     [classpath] /Users/arshiya/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar
+     [classpath] /Users/arshiya/Downloads/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-primitive-collections/2.2.1/neo4j-primitive-collections-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-reflect/2.10.5/scala-reflect-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-matching/2.2.1/neo4j-graph-matching-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-1.9/2.0.4/neo4j-cypher-compiler-1.9-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-io/2.2.1/neo4j-io-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-lucene-index/2.2.1/neo4j-lucene-index-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.0/2.0.4/neo4j-cypher-compiler-2.0-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher/2.2.1/neo4j-cypher-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-algo/2.2.1/neo4j-graph-algo-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-library/2.10.5/scala-library-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.2/2.2.1/neo4j-cypher-compiler-2.2-2.2.1.jar
+     [classpath] /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/out/production/phase2_final
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-unsafe/2.2.1/neo4j-unsafe-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.1/2.1.7/neo4j-cypher-compiler-2.1-2.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-kernel/2.2.1/neo4j-kernel-2.2.1.jar
+2019-01-20 12:53:34.967+0000 INFO  [org.neo4j]: Library path:
+    /Users/arshiya/Library/Java/Extensions
+    /Library/Java/Extensions
+    /Network/Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+    /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+2019-01-20 12:53:34.968+0000 INFO  [org.neo4j]: System.properties:
+    gopherProxySet = false
+    awt.toolkit = sun.lwawt.macosx.LWCToolkit
+    file.encoding.pkg = sun.io
+    sun.cpu.isalist = 
+    sun.jnu.encoding = UTF-8
+    sun.arch.data.model = 64
+    user.timezone = Asia/Tehran
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib
+    sun.java.command = Main
+    jdk.debug = release
+    sun.cpu.endian = little
+    user.home = /Users/arshiya
+    user.language = en
+    file.separator = /
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    user.name = arshiya
+    path.separator = :
+    file.encoding = UTF-8
+    user.dir = /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+    sun.os.patch.level = unknown
+    sun.io.unicode.encoding = UnicodeBig
+2019-01-20 12:53:34.968+0000 INFO  [org.neo4j]: Network information:
+    Interface utun2:
+        address: fe80:0:0:0:7f07:4b11:2212:e69c%utun2
+    Interface utun1:
+        address: fe80:0:0:0:f9dc:e060:a559:3eab%utun1
+    Interface utun0:
+        address: fe80:0:0:0:85a7:4128:8122:a8b9%utun0
+    Interface awdl0:
+        address: fe80:0:0:0:1895:8aff:fe74:d7ec%awdl0
+    Interface en5:
+        address: fe80:0:0:0:aede:48ff:fe00:1122%en5
+    Interface ppp0:
+        address: 10.0.5.17
+    Interface en0:
+        address: fe80:0:0:0:cf9:f835:b3c8:5e9b%en0
+        address: 192.168.1.115
+    Interface lo0:
+        address: fe80:0:0:0:0:0:0:1%lo0
+        address: 0:0:0:0:0:0:0:1%lo0
+        address: 127.0.0.1
+2019-01-20 12:53:34.970+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics END ---
+2019-01-20 12:53:35.069+0000 INFO  [org.neo4j]: Creating new db @ /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore
+2019-01-20 12:53:35.848+0000 INFO  [org.neo4j]: No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2019-01-20 12:53:35.876+0000 INFO  [org.neo4j]: No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2019-01-20 12:53:36.139+0000 INFO  [org.neo4j]: Opened logical log [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.transaction.db.0] version=0, lastTxId=1 (clean)
+2019-01-20 12:53:36.143+0000 INFO  [org.neo4j]: Missing counts store, rebuilding it.
+2019-01-20 12:53:36.235+0000 INFO  [org.neo4j]: Rebuilding lucene scan store, this may take a while
+2019-01-20 12:53:36.236+0000 INFO  [org.neo4j]: Lucene scan store rebuilt (roughly -1 nodes)
+2019-01-20 12:53:36.243+0000 INFO  [org.neo4j]: Kernel health set to OK
+2019-01-20 12:53:36.852+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2019-01-20 12:53:36.852+0000 INFO  [org.neo4j]: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId{creationTime=1547988815069, randomId=1524212225806100136, storeVersion=14969031248344582, upgradeTime=1547988815069, upgradeId=1}
+2019-01-20 12:53:36.867+0000 INFO  [org.neo4j]: Kernel version: Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1
+2019-01-20 12:53:36.867+0000 INFO  [org.neo4j]: Neo4j component versions:
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 1.9 (neo4j-cypher-compiler-1.9), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.2 (neo4j-cypher-compiler-2.2), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Lucene Index (neo4j-lucene-index), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.0 (neo4j-cypher-compiler-2.0), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Graph Matching (neo4j-graph-matching), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.873+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.1 (neo4j-cypher-compiler-2.1), version: 2.1.7; revision: 2.1.7:2.1-maint:649/ed233fc1087f4549d1956b8ec4a504fe2f13a446
+2019-01-20 12:53:36.874+0000 INFO  [org.neo4j]:   Neo4j - Cypher (neo4j-cypher), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.874+0000 INFO  [org.neo4j]:   Neo4j - Graph Algorithms (neo4j-graph-algo), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:53:36.874+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2019-01-20 12:53:36.875+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2019-01-20 12:53:36.875+0000 INFO  [org.neo4j]: Store versions:
+    Store versions:
+      NeoStore v0.A.5
+      SchemaStore v0.A.5
+      NodeStore v0.A.5
+      RelationshipStore v0.A.5
+      RelationshipTypeStore v0.A.5
+      LabelTokenStore v0.A.5
+      PropertyStore v0.A.5
+      PropertyIndexStore v0.A.5
+      StringPropertyStore v0.A.5
+      ArrayPropertyStore v0.A.5
+      RelationshipGroupStore v0.A.5
+2019-01-20 12:53:36.876+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2019-01-20 12:53:36.876+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2019-01-20 12:53:36.876+0000 INFO  [org.neo4j]: Id usage:
+    Id usage:
+      SchemaStore: used=1 high=0
+      NodeStore: used=0 high=-1
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      LabelTokenStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=0 high=-1
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+      RelationshipGroupStore: used=1 high=0
+2019-01-20 12:53:36.877+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2019-01-20 12:53:36.877+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2019-01-20 12:53:36.877+0000 INFO  [org.neo4j]: Disk space on partition (Total / Free / Free %): 250685575168 / 48005361664 / 19
+Storage files: (filename : modification date - size)
+      index:
+      - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+      lock: 2019-01-20T16:23:35+0330 - 0.00 B
+      messages.log: 2019-01-20T16:23:36+0330 - 11.87 kB
+      neostore: 2019-01-20T16:23:35+0330 - 99.00 B
+      neostore.counts.db.a: 2019-01-20T16:23:36+0330 - 114.00 B
+      neostore.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.labeltokenstore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.labeltokenstore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.labeltokenstore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.labeltokenstore.db.names.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.nodestore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.nodestore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.nodestore.db.labels: 2019-01-20T16:23:35+0330 - 68.00 B
+      neostore.nodestore.db.labels.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.propertystore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.propertystore.db.arrays: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.arrays.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.propertystore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.propertystore.db.index: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.propertystore.db.index.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.propertystore.db.index.keys: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.propertystore.db.index.keys.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.propertystore.db.strings: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.strings.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.relationshipgroupstore.db: 2019-01-20T16:23:35+0330 - 25.00 B
+      neostore.relationshipgroupstore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.relationshipstore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.relationshipstore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.relationshiptypestore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.relationshiptypestore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.relationshiptypestore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.relationshiptypestore.db.names.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.schemastore.db: 2019-01-20T16:23:35+0330 - 64.00 B
+      neostore.schemastore.db.id: 2019-01-20T16:23:35+0330 - 9.00 B
+      neostore.transaction.db.0: 2019-01-20T16:23:36+0330 - 16.00 B
+      schema:
+        label:
+          lucene:
+            write.lock: 2019-01-20T16:23:35+0330 - 0.00 B
+          - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+        - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+      - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+      store_lock: 2019-01-20T16:23:35+0330 - 0.00 B
+2019-01-20 12:54:05.911+0000 INFO  [org.neo4j]: You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7 or OpenJDK(TM) 7.
+2019-01-20 12:54:06.042+0000 INFO  [org.neo4j]: No locking implementation specified, defaulting to 'community'
+2019-01-20 12:54:06.116+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics START ---
+2019-01-20 12:54:06.117+0000 INFO  [org.neo4j]: Neo4j Kernel properties:
+    store_dir=/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo
+    ephemeral=false
+2019-01-20 12:54:06.121+0000 INFO  [org.neo4j]: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    NETWORK
+2019-01-20 12:54:06.121+0000 INFO  [org.neo4j]: System memory information:
+    Total Physical memory: 8.00 GB
+    Free Physical memory: 319.92 MB
+    Committed virtual memory: 7.68 GB
+    Total swap space: 1.00 GB
+    Free swap space: 475.75 MB
+2019-01-20 12:54:06.127+0000 INFO  [org.neo4j]: JVM memory information:
+    Free  memory: 96.05 MB
+    Total memory: 128.00 MB
+    Max   memory: 2.00 GB
+    Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space]
+    Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+    Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.04 MB, max=5.56 MB, threshold=0.00 B
+    Memory Pool: Metaspace (Non-heap memory): committed=12.13 MB, used=11.65 MB, max=-1.00 B, threshold=0.00 B
+    Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=2.44 MB, used=1.73 MB, max=117.22 MB, threshold=0.00 B
+    Memory Pool: Compressed Class Space (Non-heap memory): committed=1.38 MB, used=1.20 MB, max=1.00 GB, threshold=0.00 B
+    Memory Pool: G1 Eden Space (Heap memory): committed=12.00 MB, used=7.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: G1 Old Gen (Heap memory): committed=114.00 MB, used=23.44 MB, max=2.00 GB, threshold=0.00 B
+    Memory Pool: G1 Survivor Space (Heap memory): committed=2.00 MB, used=2.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=291.75 kB, max=117.22 MB, threshold=0.00 B
+2019-01-20 12:54:06.163+0000 INFO  [org.neo4j]: Operating system information:
+    Operating System: Mac OS X; version: 10.14.2; arch: x86_64; cpus: 4
+    Max number of file descriptors: 10240
+    Number of open file descriptors: 29
+    Process id: 1046@arshiyas-MacBook-Pro.local
+    Byte order: LITTLE_ENDIAN
+    Local timezone: Asia/Tehran
+2019-01-20 12:54:06.184+0000 INFO  [org.neo4j]: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: "Oracle Corporation"
+    VM Version: 10+46
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=61576:/Applications/IntelliJ IDEA.app/Contents/bin, -Dfile.encoding=UTF-8]
+2019-01-20 12:54:06.186+0000 INFO  [org.neo4j]: Java classpath:
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-csv/2.2.1/neo4j-csv-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+     [classpath] /Users/arshiya/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar
+     [classpath] /Users/arshiya/Downloads/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-primitive-collections/2.2.1/neo4j-primitive-collections-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-reflect/2.10.5/scala-reflect-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-matching/2.2.1/neo4j-graph-matching-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-1.9/2.0.4/neo4j-cypher-compiler-1.9-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-io/2.2.1/neo4j-io-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-lucene-index/2.2.1/neo4j-lucene-index-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.0/2.0.4/neo4j-cypher-compiler-2.0-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher/2.2.1/neo4j-cypher-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-algo/2.2.1/neo4j-graph-algo-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-library/2.10.5/scala-library-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.2/2.2.1/neo4j-cypher-compiler-2.2-2.2.1.jar
+     [classpath] /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/out/production/phase2_final
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-unsafe/2.2.1/neo4j-unsafe-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.1/2.1.7/neo4j-cypher-compiler-2.1-2.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-kernel/2.2.1/neo4j-kernel-2.2.1.jar
+2019-01-20 12:54:06.187+0000 INFO  [org.neo4j]: Library path:
+    /Users/arshiya/Library/Java/Extensions
+    /Library/Java/Extensions
+    /Network/Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+    /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+2019-01-20 12:54:06.187+0000 INFO  [org.neo4j]: System.properties:
+    gopherProxySet = false
+    awt.toolkit = sun.lwawt.macosx.LWCToolkit
+    file.encoding.pkg = sun.io
+    sun.cpu.isalist = 
+    sun.jnu.encoding = UTF-8
+    sun.arch.data.model = 64
+    user.timezone = Asia/Tehran
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib
+    sun.java.command = Main
+    jdk.debug = release
+    sun.cpu.endian = little
+    user.home = /Users/arshiya
+    user.language = en
+    file.separator = /
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    user.name = arshiya
+    path.separator = :
+    file.encoding = UTF-8
+    user.dir = /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+    sun.os.patch.level = unknown
+    sun.io.unicode.encoding = UnicodeBig
+2019-01-20 12:54:06.188+0000 INFO  [org.neo4j]: Network information:
+    Interface utun2:
+        address: fe80:0:0:0:7f07:4b11:2212:e69c%utun2
+    Interface utun1:
+        address: fe80:0:0:0:f9dc:e060:a559:3eab%utun1
+    Interface utun0:
+        address: fe80:0:0:0:85a7:4128:8122:a8b9%utun0
+    Interface awdl0:
+        address: fe80:0:0:0:1895:8aff:fe74:d7ec%awdl0
+    Interface en5:
+        address: fe80:0:0:0:aede:48ff:fe00:1122%en5
+    Interface ppp0:
+        address: 10.0.5.17
+    Interface en0:
+        address: fe80:0:0:0:cf9:f835:b3c8:5e9b%en0
+        address: 192.168.1.115
+    Interface lo0:
+        address: fe80:0:0:0:0:0:0:1%lo0
+        address: 0:0:0:0:0:0:0:1%lo0
+        address: 127.0.0.1
+2019-01-20 12:54:06.190+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics END ---
+2019-01-20 12:54:06.415+0000 INFO  [org.neo4j]: No lucene scan store index found, this might just be first use. Preparing to rebuild.
+2019-01-20 12:54:06.574+0000 INFO  [org.neo4j]: Recovery required for log with version 0
+2019-01-20 12:54:06.604+0000 INFO  [org.neo4j]: About to rotate counts store at transaction 2 to [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.b], from [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.a].
+2019-01-20 12:54:06.607+0000 INFO  [org.neo4j]: Successfully rotated counts store at transaction 2 to [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.b], from [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.a].
+2019-01-20 12:54:06.794+0000 INFO  [org.neo4j]: Rebuilding lucene scan store, this may take a while
+2019-01-20 12:54:06.796+0000 INFO  [org.neo4j]: Lucene scan store rebuilt (roughly -1 nodes)
+2019-01-20 12:54:06.801+0000 INFO  [org.neo4j]: Recovery completed. 1 transactions, first:2, last:2 recovered
+2019-01-20 12:54:06.801+0000 INFO  [org.neo4j]: Kernel health set to OK
+2019-01-20 12:54:07.384+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2019-01-20 12:54:07.384+0000 INFO  [org.neo4j]: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId{creationTime=1547988815069, randomId=1524212225806100136, storeVersion=14969031248344582, upgradeTime=1547988815069, upgradeId=1}
+2019-01-20 12:54:07.399+0000 INFO  [org.neo4j]: Kernel version: Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1
+2019-01-20 12:54:07.399+0000 INFO  [org.neo4j]: Neo4j component versions:
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 1.9 (neo4j-cypher-compiler-1.9), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.2 (neo4j-cypher-compiler-2.2), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Lucene Index (neo4j-lucene-index), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.0 (neo4j-cypher-compiler-2.0), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Graph Matching (neo4j-graph-matching), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.406+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.1 (neo4j-cypher-compiler-2.1), version: 2.1.7; revision: 2.1.7:2.1-maint:649/ed233fc1087f4549d1956b8ec4a504fe2f13a446
+2019-01-20 12:54:07.407+0000 INFO  [org.neo4j]:   Neo4j - Cypher (neo4j-cypher), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.407+0000 INFO  [org.neo4j]:   Neo4j - Graph Algorithms (neo4j-graph-algo), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:54:07.407+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2019-01-20 12:54:07.408+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2019-01-20 12:54:07.408+0000 INFO  [org.neo4j]: Store versions:
+    Store versions:
+      NeoStore v0.A.5
+      SchemaStore v0.A.5
+      NodeStore v0.A.5
+      RelationshipStore v0.A.5
+      RelationshipTypeStore v0.A.5
+      LabelTokenStore v0.A.5
+      PropertyStore v0.A.5
+      PropertyIndexStore v0.A.5
+      StringPropertyStore v0.A.5
+      ArrayPropertyStore v0.A.5
+      RelationshipGroupStore v0.A.5
+2019-01-20 12:54:07.409+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2019-01-20 12:54:07.409+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2019-01-20 12:54:07.409+0000 INFO  [org.neo4j]: Id usage:
+    Id usage:
+      SchemaStore: used=1 high=0
+      NodeStore: used=0 high=-1
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      LabelTokenStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=1 high=0
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+      RelationshipGroupStore: used=1 high=0
+2019-01-20 12:54:07.410+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2019-01-20 12:54:07.410+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2019-01-20 12:54:07.411+0000 INFO  [org.neo4j]: Disk space on partition (Total / Free / Free %): 250685575168 / 48005103616 / 19
+Storage files: (filename : modification date - size)
+      index:
+      - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+      lock: 2019-01-20T16:23:35+0330 - 0.00 B
+      messages.log: 2019-01-20T16:24:07+0330 - 27.11 kB
+      neostore: 2019-01-20T16:24:06+0330 - 8.00 kB
+      neostore.counts.db.a: 2019-01-20T16:23:36+0330 - 114.00 B
+      neostore.counts.db.b: 2019-01-20T16:24:06+0330 - 114.00 B
+      neostore.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.labeltokenstore.db: 2019-01-20T16:24:06+0330 - 8.00 kB
+      neostore.labeltokenstore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.labeltokenstore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.labeltokenstore.db.names.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.nodestore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.nodestore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.nodestore.db.labels: 2019-01-20T16:23:35+0330 - 68.00 B
+      neostore.nodestore.db.labels.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.propertystore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.propertystore.db.arrays: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.arrays.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.propertystore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.propertystore.db.index: 2019-01-20T16:24:07+0330 - 8.00 kB
+      neostore.propertystore.db.index.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.propertystore.db.index.keys: 2019-01-20T16:24:06+0330 - 7.98 kB
+      neostore.propertystore.db.index.keys.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.propertystore.db.strings: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.strings.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.relationshipgroupstore.db: 2019-01-20T16:23:35+0330 - 25.00 B
+      neostore.relationshipgroupstore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.relationshipstore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.relationshipstore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.relationshiptypestore.db: 2019-01-20T16:24:06+0330 - 8.00 kB
+      neostore.relationshiptypestore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.relationshiptypestore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.relationshiptypestore.db.names.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.schemastore.db: 2019-01-20T16:23:35+0330 - 64.00 B
+      neostore.schemastore.db.id: 2019-01-20T16:24:06+0330 - 9.00 B
+      neostore.transaction.db.0: 2019-01-20T16:23:36+0330 - 119.00 B
+      schema:
+        label:
+          lucene:
+            segments.gen: 2019-01-20T16:24:06+0330 - 20.00 B
+            segments_1: 2019-01-20T16:24:06+0330 - 32.00 B
+            write.lock: 2019-01-20T16:24:06+0330 - 0.00 B
+          - Total: 2019-01-20T16:24:06+0330 - 52.00 B
+        - Total: 2019-01-20T16:24:06+0330 - 52.00 B
+      - Total: 2019-01-20T16:23:35+0330 - 52.00 B
+      store_lock: 2019-01-20T16:23:35+0330 - 0.00 B
+2019-01-20 12:58:12.913+0000 INFO  [org.neo4j]: You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7 or OpenJDK(TM) 7.
+2019-01-20 12:58:13.042+0000 INFO  [org.neo4j]: No locking implementation specified, defaulting to 'community'
+2019-01-20 12:58:13.109+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics START ---
+2019-01-20 12:58:13.110+0000 INFO  [org.neo4j]: Neo4j Kernel properties:
+    store_dir=/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo
+    ephemeral=false
+2019-01-20 12:58:13.115+0000 INFO  [org.neo4j]: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    NETWORK
+2019-01-20 12:58:13.116+0000 INFO  [org.neo4j]: System memory information:
+    Total Physical memory: 8.00 GB
+    Free Physical memory: 915.57 MB
+    Committed virtual memory: 7.68 GB
+    Total swap space: 2.00 GB
+    Free swap space: 1.11 GB
+2019-01-20 12:58:13.122+0000 INFO  [org.neo4j]: JVM memory information:
+    Free  memory: 95.61 MB
+    Total memory: 128.00 MB
+    Max   memory: 2.00 GB
+    Garbage Collector: G1 Young Generation: [G1 Eden Space, G1 Survivor Space]
+    Garbage Collector: G1 Old Generation: [G1 Eden Space, G1 Survivor Space, G1 Old Gen]
+    Memory Pool: CodeHeap 'non-nmethods' (Non-heap memory): committed=2.44 MB, used=1.04 MB, max=5.56 MB, threshold=0.00 B
+    Memory Pool: Metaspace (Non-heap memory): committed=12.13 MB, used=11.65 MB, max=-1.00 B, threshold=0.00 B
+    Memory Pool: CodeHeap 'profiled nmethods' (Non-heap memory): committed=2.44 MB, used=1.72 MB, max=117.22 MB, threshold=0.00 B
+    Memory Pool: Compressed Class Space (Non-heap memory): committed=1.38 MB, used=1.20 MB, max=1.00 GB, threshold=0.00 B
+    Memory Pool: G1 Eden Space (Heap memory): committed=11.00 MB, used=7.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: G1 Old Gen (Heap memory): committed=115.00 MB, used=23.99 MB, max=2.00 GB, threshold=0.00 B
+    Memory Pool: G1 Survivor Space (Heap memory): committed=2.00 MB, used=2.00 MB, max=-1.00 B, threshold=?
+    Memory Pool: CodeHeap 'non-profiled nmethods' (Non-heap memory): committed=2.44 MB, used=301.63 kB, max=117.22 MB, threshold=0.00 B
+2019-01-20 12:58:13.158+0000 INFO  [org.neo4j]: Operating system information:
+    Operating System: Mac OS X; version: 10.14.2; arch: x86_64; cpus: 4
+    Max number of file descriptors: 10240
+    Number of open file descriptors: 29
+    Process id: 1064@arshiyas-MacBook-Pro.local
+    Byte order: LITTLE_ENDIAN
+    Local timezone: Asia/Tehran
+2019-01-20 12:58:13.408+0000 INFO  [org.neo4j]: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: "Oracle Corporation"
+    VM Version: 10+46
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=61778:/Applications/IntelliJ IDEA.app/Contents/bin, -Dfile.encoding=UTF-8]
+2019-01-20 12:58:13.410+0000 INFO  [org.neo4j]: Java classpath:
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-csv/2.2.1/neo4j-csv-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar
+     [classpath] /Users/arshiya/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.4/concurrentlinkedhashmap-lru-1.4.jar
+     [classpath] /Users/arshiya/Downloads/mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-primitive-collections/2.2.1/neo4j-primitive-collections-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-scala_2.10/1.1.7/parboiled-scala_2.10-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-reflect/2.10.5/scala-reflect-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-matching/2.2.1/neo4j-graph-matching-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-1.9/2.0.4/neo4j-cypher-compiler-1.9-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/parboiled/parboiled-core/1.1.7/parboiled-core-1.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-io/2.2.1/neo4j-io-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-lucene-index/2.2.1/neo4j-lucene-index-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.0/2.0.4/neo4j-cypher-compiler-2.0-2.0.4.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher/2.2.1/neo4j-cypher-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-graph-algo/2.2.1/neo4j-graph-algo-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/scala-lang/scala-library/2.10.5/scala-library-2.10.5.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.2/2.2.1/neo4j-cypher-compiler-2.2-2.2.1.jar
+     [classpath] /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/out/production/phase2_final
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-unsafe/2.2.1/neo4j-unsafe-2.2.1.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-cypher-compiler-2.1/2.1.7/neo4j-cypher-compiler-2.1-2.1.7.jar
+     [classpath] /Users/arshiya/.m2/repository/org/neo4j/neo4j-kernel/2.2.1/neo4j-kernel-2.2.1.jar
+2019-01-20 12:58:13.411+0000 INFO  [org.neo4j]: Library path:
+    /Users/arshiya/Library/Java/Extensions
+    /Library/Java/Extensions
+    /Network/Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+    /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+2019-01-20 12:58:13.412+0000 INFO  [org.neo4j]: System.properties:
+    gopherProxySet = false
+    awt.toolkit = sun.lwawt.macosx.LWCToolkit
+    file.encoding.pkg = sun.io
+    sun.cpu.isalist = 
+    sun.jnu.encoding = UTF-8
+    sun.arch.data.model = 64
+    user.timezone = Asia/Tehran
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.boot.library.path = /Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib
+    sun.java.command = Main
+    jdk.debug = release
+    sun.cpu.endian = little
+    user.home = /Users/arshiya
+    user.language = en
+    file.separator = /
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    user.name = arshiya
+    path.separator = :
+    file.encoding = UTF-8
+    user.dir = /Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final
+    sun.os.patch.level = unknown
+    sun.io.unicode.encoding = UnicodeBig
+2019-01-20 12:58:13.412+0000 INFO  [org.neo4j]: Network information:
+    Interface utun2:
+        address: fe80:0:0:0:7f07:4b11:2212:e69c%utun2
+    Interface utun1:
+        address: fe80:0:0:0:f9dc:e060:a559:3eab%utun1
+    Interface utun0:
+        address: fe80:0:0:0:85a7:4128:8122:a8b9%utun0
+    Interface awdl0:
+        address: fe80:0:0:0:1895:8aff:fe74:d7ec%awdl0
+    Interface en5:
+        address: fe80:0:0:0:aede:48ff:fe00:1122%en5
+    Interface ppp0:
+        address: 10.0.5.17
+    Interface en0:
+        address: fe80:0:0:0:cf9:f835:b3c8:5e9b%en0
+        address: 192.168.1.115
+    Interface lo0:
+        address: fe80:0:0:0:0:0:0:1%lo0
+        address: 0:0:0:0:0:0:0:1%lo0
+        address: 127.0.0.1
+2019-01-20 12:58:13.414+0000 INFO  [org.neo4j]: --- INITIALIZED diagnostics END ---
+2019-01-20 12:58:13.848+0000 INFO  [org.neo4j]: Recovery required for log with version 0
+2019-01-20 12:58:13.867+0000 INFO  [org.neo4j]: About to rotate counts store at transaction 2 to [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.a], from [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.b].
+2019-01-20 12:58:13.873+0000 INFO  [org.neo4j]: Successfully rotated counts store at transaction 2 to [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.a], from [/Users/arshiya/Documents/ComputerEngineering/Database/class/project/phase 2/phase2_final/neo/neostore.counts.db.b].
+2019-01-20 12:58:14.009+0000 INFO  [org.neo4j]: Recovery completed. 1 transactions, first:2, last:2 recovered
+2019-01-20 12:58:14.009+0000 INFO  [org.neo4j]: Kernel health set to OK
+2019-01-20 12:58:14.606+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2019-01-20 12:58:14.606+0000 INFO  [org.neo4j]: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId{creationTime=1547988815069, randomId=1524212225806100136, storeVersion=14969031248344582, upgradeTime=1547988815069, upgradeId=1}
+2019-01-20 12:58:14.623+0000 INFO  [org.neo4j]: Kernel version: Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1
+2019-01-20 12:58:14.623+0000 INFO  [org.neo4j]: Neo4j component versions:
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 1.9 (neo4j-cypher-compiler-1.9), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.2 (neo4j-cypher-compiler-2.2), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Lucene Index (neo4j-lucene-index), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.0 (neo4j-cypher-compiler-2.0), version: 2.0.4; revision: 2.0.4:2.0-maint:130/4a7d10bc274a5d26a180bbe9df25100e8a694748
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Graph Database Kernel (neo4j-kernel), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Graph Matching (neo4j-graph-matching), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.630+0000 INFO  [org.neo4j]:   Neo4j - Cypher Compiler 2.1 (neo4j-cypher-compiler-2.1), version: 2.1.7; revision: 2.1.7:2.1-maint:649/ed233fc1087f4549d1956b8ec4a504fe2f13a446
+2019-01-20 12:58:14.631+0000 INFO  [org.neo4j]:   Neo4j - Cypher (neo4j-cypher), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.631+0000 INFO  [org.neo4j]:   Neo4j - Graph Algorithms (neo4j-graph-algo), version: 2.2.1; revision: 2.2.1:2.2:904/c23258e99edbfff137bea0d83af56c79a46bca31
+2019-01-20 12:58:14.631+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2019-01-20 12:58:14.632+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2019-01-20 12:58:14.633+0000 INFO  [org.neo4j]: Store versions:
+    Store versions:
+      NeoStore v0.A.5
+      SchemaStore v0.A.5
+      NodeStore v0.A.5
+      RelationshipStore v0.A.5
+      RelationshipTypeStore v0.A.5
+      LabelTokenStore v0.A.5
+      PropertyStore v0.A.5
+      PropertyIndexStore v0.A.5
+      StringPropertyStore v0.A.5
+      ArrayPropertyStore v0.A.5
+      RelationshipGroupStore v0.A.5
+2019-01-20 12:58:14.633+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2019-01-20 12:58:14.633+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2019-01-20 12:58:14.633+0000 INFO  [org.neo4j]: Id usage:
+    Id usage:
+      SchemaStore: used=1 high=0
+      NodeStore: used=0 high=-1
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      LabelTokenStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=1 high=0
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+      RelationshipGroupStore: used=1 high=0
+2019-01-20 12:58:14.635+0000 INFO  [org.neo4j]: --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2019-01-20 12:58:14.636+0000 INFO  [org.neo4j]: --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2019-01-20 12:58:14.636+0000 INFO  [org.neo4j]: Disk space on partition (Total / Free / Free %): 250685575168 / 47997444096 / 19
+Storage files: (filename : modification date - size)
+      index:
+      - Total: 2019-01-20T16:23:35+0330 - 0.00 B
+      lock: 2019-01-20T16:23:35+0330 - 0.00 B
+      messages.log: 2019-01-20T16:28:14+0330 - 42.22 kB
+      neostore: 2019-01-20T16:28:13+0330 - 8.00 kB
+      neostore.counts.db.a: 2019-01-20T16:28:13+0330 - 114.00 B
+      neostore.counts.db.b: 2019-01-20T16:24:06+0330 - 114.00 B
+      neostore.id: 2019-01-20T16:28:14+0330 - 9.00 B
+      neostore.labeltokenstore.db: 2019-01-20T16:28:14+0330 - 8.00 kB
+      neostore.labeltokenstore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.labeltokenstore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.labeltokenstore.db.names.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.nodestore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.nodestore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.nodestore.db.labels: 2019-01-20T16:23:35+0330 - 68.00 B
+      neostore.nodestore.db.labels.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.propertystore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.propertystore.db.arrays: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.arrays.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.propertystore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.propertystore.db.index: 2019-01-20T16:28:14+0330 - 8.00 kB
+      neostore.propertystore.db.index.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.propertystore.db.index.keys: 2019-01-20T16:28:13+0330 - 7.98 kB
+      neostore.propertystore.db.index.keys.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.propertystore.db.strings: 2019-01-20T16:23:35+0330 - 128.00 B
+      neostore.propertystore.db.strings.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.relationshipgroupstore.db: 2019-01-20T16:23:35+0330 - 25.00 B
+      neostore.relationshipgroupstore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.relationshipstore.db: 2019-01-20T16:23:35+0330 - 0.00 B
+      neostore.relationshipstore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.relationshiptypestore.db: 2019-01-20T16:28:14+0330 - 8.00 kB
+      neostore.relationshiptypestore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.relationshiptypestore.db.names: 2019-01-20T16:23:35+0330 - 38.00 B
+      neostore.relationshiptypestore.db.names.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.schemastore.db: 2019-01-20T16:23:35+0330 - 64.00 B
+      neostore.schemastore.db.id: 2019-01-20T16:28:13+0330 - 9.00 B
+      neostore.transaction.db.0: 2019-01-20T16:23:36+0330 - 119.00 B
+      schema:
+        label:
+          lucene:
+            segments.gen: 2019-01-20T16:24:06+0330 - 20.00 B
+            segments_1: 2019-01-20T16:24:06+0330 - 32.00 B
+            write.lock: 2019-01-20T16:24:06+0330 - 0.00 B
+          - Total: 2019-01-20T16:24:06+0330 - 52.00 B
+        - Total: 2019-01-20T16:24:06+0330 - 52.00 B
+      - Total: 2019-01-20T16:23:35+0330 - 52.00 B
+      store_lock: 2019-01-20T16:23:35+0330 - 0.00 B
