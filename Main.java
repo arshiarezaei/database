@@ -104,10 +104,14 @@ public class Main  {
 
             }
             else if (enteredCommand.startsWith("create_user ")){
-                userPhoneNumber = enteredCommand.substring(12,enteredCommand.length());
-                if(userPhoneNumber.length()==11){
-                    User user = new User(userPhoneNumber);
+                  String newUserPhoneNumber = enteredCommand.substring(12,enteredCommand.length());
+                if(newUserPhoneNumber.length()==11){
+                    User user = new User(newUserPhoneNumber);
                     user.createUser();
+                    neo4j neo4j = new neo4j();
+                    neo4j.addMember(newUserPhoneNumber);
+                    userPhoneNumber = newUserPhoneNumber;
+                    loggedIn = true;
                 }
 
             }
@@ -123,6 +127,8 @@ public class Main  {
                 //System.out.println(messageText);
                 PrivateChats message = new PrivateChats();
                 message.sendMessage(userPhoneNumber,receiver,messageText);
+                neo4j newMessage = new neo4j();
+                newMessage.sendMessage(userPhoneNumber,receiver);
 
             }
             else if(enteredCommand.startsWith("create_channel ")&&loggedIn){
@@ -331,6 +337,16 @@ public class Main  {
                 else {
                     System.out.println("no unread message");
                 }
+            }
+            else if(enteredCommand.startsWith("addMemberToNeo ")){
+               userPhoneNumber= enteredCommand.substring(enteredCommand.indexOf(" ")+1,enteredCommand.length());
+                neo4j newMember = new neo4j();
+                newMember.addMember(userPhoneNumber);
+
+            }
+            else if(enteredCommand.startsWith("nodeWithHighestDegree")){
+                neo4j nodeWithHighestDegree = new neo4j();
+                nodeWithHighestDegree.nodeWithHighestDegree();
             }
         }
     }
